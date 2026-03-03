@@ -1,0 +1,39 @@
+GRACE MANAGER — Gestionale stile ClickUp (semplificato) per Grace & Partners
+================================================================
+
+REQUISITI
+- PHP 8.0+ (consigliato 8.1/8.2)
+- MySQL/MariaDB
+- Hosting classico OK (Apache/Nginx)
+
+INSTALLAZIONE (PASSO-PASSO)
+1 Carica TUTTI i file del pacchetto nella root del tuo dominio/sottodominio.
+
+2 Crea un database MySQL (es. grace_manager) e un utente DB.
+
+3 Importa il file database.sql nel DB (via phpMyAdmin).
+
+4 Configura le credenziali in:
+   config/database.php
+
+5 Crea il primo utente ADMIN:
+   - genera l'hash password con un file temporaneo:
+     <?php echo password_hash('PasswordForte', PASSWORD_DEFAULT); ?>
+   - poi esegui nel DB:
+     INSERT INTO users (name,email,role,password)
+     VALUES ('Admin Grace','admin@tuodominio.it','admin','HASH_GENERATO');
+
+6 Apri:
+   /login.php
+   e accedi.
+
+FUNZIONI INCLUSE
+- Client Hub (clienti → progetti → task)
+- Task: lista + Kanban drag & drop (aggiorna status)
+- Checklist e commenti per task
+- Dashboard “Oggi” (scadute, 7gg, mie)
+- Team workload (task aperte, ore stimate, scadenze 7gg)
+- Admin: creazione utenti (admin/pm/team)
+
+NOTE
+- Stati: Backlog / In progress / Review / Done (apposta: più user-friendly)
