@@ -1,8 +1,8 @@
 <?php
 return [
-  'host' => 'localhost',
-  'db'   => 'grace_manager',
-  'user' => 'DB_USER',
-  'pass' => 'DB_PASS',
+  'host' => '127.0.0.1',
+  'db'   => 'grace_up',
+  'user' => 'root',
+  'pass' => '',
   'charset' => 'utf8mb4',
 ];

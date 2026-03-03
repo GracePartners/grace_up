@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $st = $pdo->prepare("SELECT id,name,email,role,password FROM users WHERE email=? LIMIT 1");
   $st->execute([$email]);
   $u = $st->fetch();
+  
 
   if ($u && password_verify($pass, $u['password'])) {
     session_regenerate_id(true);
